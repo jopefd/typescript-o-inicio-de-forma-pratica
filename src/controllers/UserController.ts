@@ -13,9 +13,15 @@ export default {
     async create(req: Request, res: Response) {
         const emailService = new EmailService()
 
-        emailService.sendMail(
-            { name: "Joao", email: "joao@joao.com" },
-            { subject: "ola", body: "olaola" }
-        )
+        emailService.sendMail({
+            to: {
+                name: "Joao",
+                email: "joao@joao.com"
+            },
+            message: {
+                subject: "ola",
+                body: "olaola"
+            }
+        })
     }
 }
